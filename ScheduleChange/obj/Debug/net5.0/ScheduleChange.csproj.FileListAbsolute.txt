@@ -492,3 +492,4 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Vi
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCCRequests\Index.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Shared\_header.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Areas\Admin\Views\Home\Index.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Shared\_footer.cshtml.g.cs
