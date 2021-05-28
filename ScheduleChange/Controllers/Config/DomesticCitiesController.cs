@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Data.Config;
+using ScheduleChange.Models.Config;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ namespace ScheduleChange.Controllers.Config
 {
     public class DomesticCitiesController : Controller
     {
-        private readonly SCCContext _context;
+        private readonly SCContext _context;
 
-        public DomesticCitiesController(SCCContext context)
+        public DomesticCitiesController(SCContext context)
         {
             _context = context;
         }
@@ -30,14 +30,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var domesticCities = await _context.DomesticCities
+            var domesticCity = await _context.DomesticCities
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (domesticCities == null)
+            if (domesticCity == null)
             {
                 return NotFound();
             }
 
-            return View(domesticCities);
+            return View(domesticCity);
         }
 
         // GET: DomesticCities/Create
@@ -51,15 +51,15 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,CityCode,CityName,CreateBy,CreateDate,UpdateBy,UpdateDate")] DomesticCities domesticCities)
+        public async Task<IActionResult> Create([Bind("Id,CityCode,CityName,CreateBy,CreateDate,UpdateBy,UpdateDate")] DomesticCity domesticCity)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(domesticCities);
+                _context.Add(domesticCity);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(domesticCities);
+            return View(domesticCity);
         }
 
         // GET: DomesticCities/Edit/5
@@ -70,12 +70,12 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var domesticCities = await _context.DomesticCities.FindAsync(id);
-            if (domesticCities == null)
+            var domesticCity = await _context.DomesticCities.FindAsync(id);
+            if (domesticCity == null)
             {
                 return NotFound();
             }
-            return View(domesticCities);
+            return View(domesticCity);
         }
 
         // POST: DomesticCities/Edit/5
@@ -83,9 +83,9 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,CityCode,CityName,CreateBy,CreateDate,UpdateBy,UpdateDate")] DomesticCities domesticCities)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,CityCode,CityName,CreateBy,CreateDate,UpdateBy,UpdateDate")] DomesticCity domesticCity)
         {
-            if (id != domesticCities.Id)
+            if (id != domesticCity.Id)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace ScheduleChange.Controllers.Config
             {
                 try
                 {
-                    _context.Update(domesticCities);
+                    _context.Update(domesticCity);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DomesticCitiesExists(domesticCities.Id))
+                    if (!DomesticCityExists(domesticCity.Id))
                     {
                         return NotFound();
                     }
@@ -110,7 +110,7 @@ namespace ScheduleChange.Controllers.Config
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(domesticCities);
+            return View(domesticCity);
         }
 
         // GET: DomesticCities/Delete/5
@@ -121,14 +121,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var domesticCities = await _context.DomesticCities
+            var domesticCity = await _context.DomesticCities
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (domesticCities == null)
+            if (domesticCity == null)
             {
                 return NotFound();
             }
 
-            return View(domesticCities);
+            return View(domesticCity);
         }
 
         // POST: DomesticCities/Delete/5
@@ -136,13 +136,13 @@ namespace ScheduleChange.Controllers.Config
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var domesticCities = await _context.DomesticCities.FindAsync(id);
-            _context.DomesticCities.Remove(domesticCities);
+            var domesticCity = await _context.DomesticCities.FindAsync(id);
+            _context.DomesticCities.Remove(domesticCity);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DomesticCitiesExists(int id)
+        private bool DomesticCityExists(int id)
         {
             return _context.DomesticCities.Any(e => e.Id == id);
         }

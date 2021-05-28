@@ -9,7 +9,7 @@ using ScheduleChange.Repository;
 
 namespace ScheduleChange.Migrations
 {
-    [DbContext(typeof(SCCContext))]
+    [DbContext(typeof(SCContext))]
     [Migration("20210527030129_initWeb")]
     partial class initWeb
     {

@@ -9,7 +9,7 @@ using ScheduleChange.Repository;
 
 namespace ScheduleChange.Migrations
 {
-    [DbContext(typeof(SCCContext))]
+    [DbContext(typeof(SCContext))]
     [Migration("20210528043524_AddConfigTables")]
     partial class AddConfigTables
     {

@@ -8,7 +8,7 @@ using ScheduleChange.Repository;
 
 namespace ScheduleChange.Migrations
 {
-    [DbContext(typeof(SCCContext))]
+    [DbContext(typeof(SCContext))]
     partial class SCCContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -19,229 +19,7 @@ namespace ScheduleChange.Migrations
                 .HasAnnotation("ProductVersion", "5.0.6")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ScheduleChange.Data.Config", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Cap1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Cap2")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Cap3")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Carrier")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Classes")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CreateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("DomeIntl")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("EQPCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FromDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("NumberOfClasses")
-                        .HasColumnType("int");
-
-                    b.Property<int>("NumberOfCompartments")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Remark")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TableNbr")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("Todate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Configs");
-                });
-
-            modelBuilder.Entity("ScheduleChange.Data.DomesticCities", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CityName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CreateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DomesticCities");
-                });
-
-            modelBuilder.Entity("ScheduleChange.Data.MarketingCodeShareFlights", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CreateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("DOW")
-                        .HasColumnType("int");
-
-                    b.Property<string>("MarketingAirline")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MarketingFlightNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Segment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("VN_OPS_FlightNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MarketingCodeShareFlights");
-                });
-
-            modelBuilder.Entity("ScheduleChange.Data.Meal", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Compartment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CreateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FromDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("FromTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("MealCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Segment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("ToDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("ToTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Meals");
-                });
-
-            modelBuilder.Entity("ScheduleChange.Data.PCC", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CityCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CityName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CreateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("PCCCode")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PCCFullName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PCCName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("QueueNumber")
-                        .HasColumnType("int");
-
-                    b.Property<string>("TimeZone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("UpdateBy")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PCCs");
-                });
-
-            modelBuilder.Entity("ScheduleChange.Data.SCCRequest", b =>
+            modelBuilder.Entity("ScheduleChange.Data.SCRequest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -307,14 +85,14 @@ namespace ScheduleChange.Migrations
                     b.ToTable("SCCRequests");
                 });
 
-            modelBuilder.Entity("Webgentle.BookStore.Data.Addresses", b =>
+            modelBuilder.Entity("ScheduleChange.Models.Config.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Addr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("City")
@@ -325,7 +103,229 @@ namespace ScheduleChange.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("Webgentle.BookStore.Data.SSCIStation", b =>
+            modelBuilder.Entity("ScheduleChange.Models.Config.DomesticCity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CityCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CityName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DomesticCities");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.Config.FlightConfigs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Cap1")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cap2")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Cap3")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Carrier")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Classes")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("DomeIntl")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("EQPCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("NumberOfClasses")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumberOfCompartments")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableNbr")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Todate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Configs");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.Config.MarketingCodeShareFlight", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DOW")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MarketingAirline")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MarketingFlightNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Segment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("VN_OPS_FlightNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MarketingCodeShareFlights");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.Config.MealsCode", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Compartment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FromDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("FromTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("MealCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Segment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ToDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ToTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Meals");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.Config.PCC", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CityCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CityName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CreateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("PCCCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PCCFullName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PCCName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("QueueNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TimeZone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UpdateBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PCCs");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.Config.SSCIStation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -361,7 +361,7 @@ namespace ScheduleChange.Migrations
                     b.ToTable("SSCIStations");
                 });
 
-            modelBuilder.Entity("Webgentle.BookStore.Data.ThreeCompartmentsFlight", b =>
+            modelBuilder.Entity("ScheduleChange.Models.Config.ThreeCompartmentsFlight", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Data.Config;
+using ScheduleChange.Models.Config;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ namespace ScheduleChange.Controllers.Config
 {
     public class MarketingCodeShareFlightsController : Controller
     {
-        private readonly SCCContext _context;
+        private readonly SCContext _context;
 
-        public MarketingCodeShareFlightsController(SCCContext context)
+        public MarketingCodeShareFlightsController(SCContext context)
         {
             _context = context;
         }
@@ -30,14 +30,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var marketingCodeShareFlights = await _context.MarketingCodeShareFlights
+            var marketingCodeShareFlight = await _context.MarketingCodeShareFlights
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (marketingCodeShareFlights == null)
+            if (marketingCodeShareFlight == null)
             {
                 return NotFound();
             }
 
-            return View(marketingCodeShareFlights);
+            return View(marketingCodeShareFlight);
         }
 
         // GET: MarketingCodeShareFlights/Create
@@ -51,15 +51,15 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,VN_OPS_FlightNumber,MarketingAirline,MarketingFlightNumber,DOW,Segment,CreateBy,CreateDate,UpdateBy,UpdateDate")] MarketingCodeShareFlights marketingCodeShareFlights)
+        public async Task<IActionResult> Create([Bind("Id,VN_OPS_FlightNumber,MarketingAirline,MarketingFlightNumber,DOW,Segment,CreateBy,CreateDate,UpdateBy,UpdateDate")] MarketingCodeShareFlight marketingCodeShareFlight)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(marketingCodeShareFlights);
+                _context.Add(marketingCodeShareFlight);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(marketingCodeShareFlights);
+            return View(marketingCodeShareFlight);
         }
 
         // GET: MarketingCodeShareFlights/Edit/5
@@ -70,12 +70,12 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var marketingCodeShareFlights = await _context.MarketingCodeShareFlights.FindAsync(id);
-            if (marketingCodeShareFlights == null)
+            var marketingCodeShareFlight = await _context.MarketingCodeShareFlights.FindAsync(id);
+            if (marketingCodeShareFlight == null)
             {
                 return NotFound();
             }
-            return View(marketingCodeShareFlights);
+            return View(marketingCodeShareFlight);
         }
 
         // POST: MarketingCodeShareFlights/Edit/5
@@ -83,9 +83,9 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,VN_OPS_FlightNumber,MarketingAirline,MarketingFlightNumber,DOW,Segment,CreateBy,CreateDate,UpdateBy,UpdateDate")] MarketingCodeShareFlights marketingCodeShareFlights)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,VN_OPS_FlightNumber,MarketingAirline,MarketingFlightNumber,DOW,Segment,CreateBy,CreateDate,UpdateBy,UpdateDate")] MarketingCodeShareFlight marketingCodeShareFlight)
         {
-            if (id != marketingCodeShareFlights.Id)
+            if (id != marketingCodeShareFlight.Id)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace ScheduleChange.Controllers.Config
             {
                 try
                 {
-                    _context.Update(marketingCodeShareFlights);
+                    _context.Update(marketingCodeShareFlight);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MarketingCodeShareFlightsExists(marketingCodeShareFlights.Id))
+                    if (!MarketingCodeShareFlightExists(marketingCodeShareFlight.Id))
                     {
                         return NotFound();
                     }
@@ -110,7 +110,7 @@ namespace ScheduleChange.Controllers.Config
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(marketingCodeShareFlights);
+            return View(marketingCodeShareFlight);
         }
 
         // GET: MarketingCodeShareFlights/Delete/5
@@ -121,14 +121,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var marketingCodeShareFlights = await _context.MarketingCodeShareFlights
+            var marketingCodeShareFlight = await _context.MarketingCodeShareFlights
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (marketingCodeShareFlights == null)
+            if (marketingCodeShareFlight == null)
             {
                 return NotFound();
             }
 
-            return View(marketingCodeShareFlights);
+            return View(marketingCodeShareFlight);
         }
 
         // POST: MarketingCodeShareFlights/Delete/5
@@ -136,13 +136,13 @@ namespace ScheduleChange.Controllers.Config
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var marketingCodeShareFlights = await _context.MarketingCodeShareFlights.FindAsync(id);
-            _context.MarketingCodeShareFlights.Remove(marketingCodeShareFlights);
+            var marketingCodeShareFlight = await _context.MarketingCodeShareFlights.FindAsync(id);
+            _context.MarketingCodeShareFlights.Remove(marketingCodeShareFlight);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MarketingCodeShareFlightsExists(int id)
+        private bool MarketingCodeShareFlightExists(int id)
         {
             return _context.MarketingCodeShareFlights.Any(e => e.Id == id);
         }

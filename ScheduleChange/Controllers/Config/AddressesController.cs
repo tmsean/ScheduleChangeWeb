@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Data.Config;
+using ScheduleChange.Models.Config;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ namespace ScheduleChange.Controllers.Config
 {
     public class AddressesController : Controller
     {
-        private readonly SCCContext _context;
+        private readonly SCContext _context;
 
-        public AddressesController(SCCContext context)
+        public AddressesController(SCContext context)
         {
             _context = context;
         }
@@ -30,14 +30,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var addresses = await _context.Addresses
+            var address = await _context.Addresses
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (addresses == null)
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(addresses);
+            return View(address);
         }
 
         // GET: Addresses/Create
@@ -51,15 +51,15 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,City,Address")] Addresses addresses)
+        public async Task<IActionResult> Create([Bind("Id,City,Addr")] Address address)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(addresses);
+                _context.Add(address);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(addresses);
+            return View(address);
         }
 
         // GET: Addresses/Edit/5
@@ -70,12 +70,12 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var addresses = await _context.Addresses.FindAsync(id);
-            if (addresses == null)
+            var address = await _context.Addresses.FindAsync(id);
+            if (address == null)
             {
                 return NotFound();
             }
-            return View(addresses);
+            return View(address);
         }
 
         // POST: Addresses/Edit/5
@@ -83,9 +83,9 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,City,Address")] Addresses addresses)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,City,Addr")] Address address)
         {
-            if (id != addresses.Id)
+            if (id != address.Id)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace ScheduleChange.Controllers.Config
             {
                 try
                 {
-                    _context.Update(addresses);
+                    _context.Update(address);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AddressesExists(addresses.Id))
+                    if (!AddressExists(address.Id))
                     {
                         return NotFound();
                     }
@@ -110,7 +110,7 @@ namespace ScheduleChange.Controllers.Config
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(addresses);
+            return View(address);
         }
 
         // GET: Addresses/Delete/5
@@ -121,14 +121,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var addresses = await _context.Addresses
+            var address = await _context.Addresses
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (addresses == null)
+            if (address == null)
             {
                 return NotFound();
             }
 
-            return View(addresses);
+            return View(address);
         }
 
         // POST: Addresses/Delete/5
@@ -136,13 +136,13 @@ namespace ScheduleChange.Controllers.Config
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var addresses = await _context.Addresses.FindAsync(id);
-            _context.Addresses.Remove(addresses);
+            var address = await _context.Addresses.FindAsync(id);
+            _context.Addresses.Remove(address);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AddressesExists(int id)
+        private bool AddressExists(int id)
         {
             return _context.Addresses.Any(e => e.Id == id);
         }

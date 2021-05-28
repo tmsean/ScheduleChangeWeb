@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Data.Config;
+using ScheduleChange.Models.Config;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ namespace ScheduleChange.Controllers.Config
 {
     public class PCCsController : Controller
     {
-        private readonly SCCContext _context;
+        private readonly SCContext _context;
 
-        public PCCsController(SCCContext context)
+        public PCCsController(SCContext context)
         {
             _context = context;
         }

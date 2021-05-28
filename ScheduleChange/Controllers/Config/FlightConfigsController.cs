@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Data.Config;
+using ScheduleChange.Models.Config;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,9 +9,9 @@ namespace ScheduleChange.Controllers.Config
 {
     public class FlightConfigsController : Controller
     {
-        private readonly SCCContext _context;
+        private readonly SCContext _context;
 
-        public FlightConfigsController(SCCContext context)
+        public FlightConfigsController(SCContext context)
         {
             _context = context;
         }
@@ -30,14 +30,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfig = await _context.Configs
+            var flightConfigs = await _context.Configs
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flightConfig == null)
+            if (flightConfigs == null)
             {
                 return NotFound();
             }
 
-            return View(flightConfig);
+            return View(flightConfigs);
         }
 
         // GET: FlightConfigs/Create
@@ -51,15 +51,15 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,Todate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfig flightConfig)
+        public async Task<IActionResult> Create([Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,Todate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfigs flightConfigs)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flightConfig);
+                _context.Add(flightConfigs);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(flightConfig);
+            return View(flightConfigs);
         }
 
         // GET: FlightConfigs/Edit/5
@@ -70,12 +70,12 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfig = await _context.Configs.FindAsync(id);
-            if (flightConfig == null)
+            var flightConfigs = await _context.Configs.FindAsync(id);
+            if (flightConfigs == null)
             {
                 return NotFound();
             }
-            return View(flightConfig);
+            return View(flightConfigs);
         }
 
         // POST: FlightConfigs/Edit/5
@@ -83,9 +83,9 @@ namespace ScheduleChange.Controllers.Config
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,Todate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfig flightConfig)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,Todate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfigs flightConfigs)
         {
-            if (id != flightConfig.Id)
+            if (id != flightConfigs.Id)
             {
                 return NotFound();
             }
@@ -94,12 +94,12 @@ namespace ScheduleChange.Controllers.Config
             {
                 try
                 {
-                    _context.Update(flightConfig);
+                    _context.Update(flightConfigs);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FlightConfigExists(flightConfig.Id))
+                    if (!FlightConfigsExists(flightConfigs.Id))
                     {
                         return NotFound();
                     }
@@ -110,7 +110,7 @@ namespace ScheduleChange.Controllers.Config
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(flightConfig);
+            return View(flightConfigs);
         }
 
         // GET: FlightConfigs/Delete/5
@@ -121,14 +121,14 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfig = await _context.Configs
+            var flightConfigs = await _context.Configs
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flightConfig == null)
+            if (flightConfigs == null)
             {
                 return NotFound();
             }
 
-            return View(flightConfig);
+            return View(flightConfigs);
         }
 
         // POST: FlightConfigs/Delete/5
@@ -136,13 +136,13 @@ namespace ScheduleChange.Controllers.Config
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var flightConfig = await _context.Configs.FindAsync(id);
-            _context.Configs.Remove(flightConfig);
+            var flightConfigs = await _context.Configs.FindAsync(id);
+            _context.Configs.Remove(flightConfigs);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FlightConfigExists(int id)
+        private bool FlightConfigsExists(int id)
         {
             return _context.Configs.Any(e => e.Id == id);
         }

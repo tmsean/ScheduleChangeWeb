@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ScheduleChange.Data.Config.Addresses>
+﻿@model IEnumerable<ScheduleChange.Models.Config.Address>
 
 @{
     ViewData["Title"] = "Index";
@@ -16,7 +16,7 @@
                 @Html.DisplayNameFor(model => model.City)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.Addr)
             </th>
             <th></th>
         </tr>
@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem => item.City)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Addr)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
