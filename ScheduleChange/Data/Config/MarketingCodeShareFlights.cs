@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleChange.Data
 {
-    public class MarketingCodeShares
+    public class MarketingCodeShareFlights
     {
         public int Id { get; set; }
         public string VN_OPS_FlightNumber { get; set; }

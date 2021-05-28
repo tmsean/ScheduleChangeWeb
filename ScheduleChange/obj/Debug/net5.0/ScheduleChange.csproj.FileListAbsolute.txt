@@ -490,5 +490,8 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Vi
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCCRequests\Details.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCCRequests\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCCRequests\Index.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\App.config
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\ScheduleChange.dll.config
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Addresses\Create.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Addresses\Delete.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Addresses\Details.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Addresses\Edit.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Addresses\Index.cshtml.g.cs
