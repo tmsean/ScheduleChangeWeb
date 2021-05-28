@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class DomesticCities
     {
+        public int Id { get; set; }
         public string CityCode { get; set; }
         public string CityName { get; set; }
         public int CreateBy { get; set; }

@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class Config
     {
+        public int Id { get; set; }
         public string TableNbr { get; set; }
         public string Carrier { get; set; }
         public bool DomeIntl { get; set; }

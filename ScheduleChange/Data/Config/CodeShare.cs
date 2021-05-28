@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class MarketingCodeShares
     {
+        public int Id { get; set; }
         public string VN_OPS_FlightNumber { get; set; }
         public string MarketingAirline { get; set; }
         public string MarketingFlightNumber { get; set; }

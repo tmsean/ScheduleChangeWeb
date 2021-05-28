@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class PCC
     {
+        public int Id { get; set; }
         public string CityCode { get; set; }
         public string PCCCode { get; set; }
         public string PCCName { get; set; }

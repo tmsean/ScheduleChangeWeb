@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class SCCRequest
     {
+        public int Id { get; set; }
         public string MessageId { get; set; }
         public string SCType { get; set; }
         public string Airline { get; set; }
@@ -25,6 +26,8 @@ namespace ScheduleChange.Data
         public string ProtectionPlan { get; set; }
         public string VIPNote { get; set; }
         public string OtherNote { get; set; }
+        //public bool IsSendSabre { get; set; }
+        //public bool IsRemarkPNR { get; set; }
 
     }
 }

@@ -7,6 +7,7 @@ namespace ScheduleChange.Data
 {
     public class Meal
     {
+        public int Id { get; set; }
         public string Segment { get; set; }
         public DateTime FromTime { get; set; }
         public DateTime ToTime { get; set; }

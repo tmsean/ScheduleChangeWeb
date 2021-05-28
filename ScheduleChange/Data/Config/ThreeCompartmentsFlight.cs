@@ -7,6 +7,7 @@ namespace Webgentle.BookStore.Data
 {
     public class ThreeCompartmentsFlight
     {
+        public int Id { get; set; }
         public string FlightNumber { get; set; }
         public DateTime DepDateFrom { get; set; }
         public DateTime DepDateTo { get; set; }

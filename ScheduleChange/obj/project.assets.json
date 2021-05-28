@@ -7410,11 +7410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\source\\repos\\ScheduleChange\\ScheduleChange\\ScheduleChange.csproj",
+      "projectUniqueName": "E:\\SCC\\ScheduleChange\\ScheduleChangeWeb\\ScheduleChange\\ScheduleChange.csproj",
       "projectName": "ScheduleChange",
-      "projectPath": "C:\\Users\\ACER\\source\\repos\\ScheduleChange\\ScheduleChange\\ScheduleChange.csproj",
+      "projectPath": "E:\\SCC\\ScheduleChange\\ScheduleChangeWeb\\ScheduleChange\\ScheduleChange.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\source\\repos\\ScheduleChange\\ScheduleChange\\obj\\",
+      "outputPath": "E:\\SCC\\ScheduleChange\\ScheduleChangeWeb\\ScheduleChange\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

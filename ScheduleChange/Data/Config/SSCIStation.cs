@@ -7,6 +7,7 @@ namespace Webgentle.BookStore.Data
 {
     public class SSCIStation
     {
+        public int Id { get; set; }
         public string CityCode { get; set; }
         public string Addresses { get; set; }
         public DateTime EffectiveDateFrom { get; set; }
