@@ -1,6 +1,4 @@
-using System;
-
-namespace ScheduleChange.Models
+namespace ScheduleChange.Data
 {
     public class ErrorViewModel
     {

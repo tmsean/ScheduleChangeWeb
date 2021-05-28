@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ScheduleChange.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using ScheduleChange.Models;
-using Webgentle.BookStore.Data;
+using ScheduleChange.Data.Config;
 
 namespace ScheduleChange.Repository
 {
@@ -21,7 +16,7 @@ namespace ScheduleChange.Repository
         //Tables config
         public DbSet<Addresses> Addresses { get; set; }
         public DbSet<MarketingCodeShareFlights> MarketingCodeShareFlights { get; set; }
-        public DbSet<Config> Configs { get; set; }
+        public DbSet<FlightConfig> Configs { get; set; }
         public DbSet<DomesticCities> DomesticCities { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<PCC> PCCs { get; set; }

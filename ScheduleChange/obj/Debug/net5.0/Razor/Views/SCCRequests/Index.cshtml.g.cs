@@ -21,13 +21,13 @@ using ScheduleChange;
 #nullable disable
 #nullable restore
 #line 2 "E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\Views\_ViewImports.cshtml"
-using ScheduleChange.Models;
+using ScheduleChange.Data;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8484a24ce07400b5f7db806c3f7f37cb4631d0dd", @"/Views/SCCRequests/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0c5644d2fdad2257ef778e358a30c225fed435c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ab690c3d2b465e62de5fecd2fe04e52deffbbd0c", @"/Views/_ViewImports.cshtml")]
     public class Views_SCCRequests_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<ScheduleChange.Data.SCCRequest>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -68,7 +68,7 @@ using ScheduleChange.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h1>Index</h1>\r\n\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd4618", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd4616", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -380,7 +380,7 @@ using ScheduleChange.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n            </td>\r\n            <td>\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd17914", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd17912", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -411,7 +411,7 @@ using ScheduleChange.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd20087", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd20085", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -442,7 +442,7 @@ using ScheduleChange.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd22266", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8484a24ce07400b5f7db806c3f7f37cb4631d0dd22264", async() => {
                 WriteLiteral("Delete");
             }
             );

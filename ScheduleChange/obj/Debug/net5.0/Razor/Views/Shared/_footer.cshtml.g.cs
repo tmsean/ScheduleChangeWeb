@@ -21,13 +21,13 @@ using ScheduleChange;
 #nullable disable
 #nullable restore
 #line 2 "E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\Views\_ViewImports.cshtml"
-using ScheduleChange.Models;
+using ScheduleChange.Data;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5de2407e706bb048953fd01fefa9c856b6c7c1ba", @"/Views/Shared/_footer.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0c5644d2fdad2257ef778e358a30c225fed435c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ab690c3d2b465e62de5fecd2fe04e52deffbbd0c", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__footer : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -58,7 +58,7 @@ using ScheduleChange.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<footer class=\"border-top footer text-muted text-center\">\r\n    <div class=\"container\">\r\n        &copy; 2021 - ScheduleChange - ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5de2407e706bb048953fd01fefa9c856b6c7c1ba4121", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5de2407e706bb048953fd01fefa9c856b6c7c1ba4119", async() => {
                 WriteLiteral("Privacy");
             }
             );

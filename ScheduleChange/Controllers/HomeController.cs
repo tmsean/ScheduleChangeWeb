@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ScheduleChange.Models;
-using System;
-using System.Collections.Generic;
+using ScheduleChange.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ScheduleChange.Controllers
 {

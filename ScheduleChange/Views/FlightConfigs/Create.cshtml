@@ -1,0 +1,113 @@
+﻿@model ScheduleChange.Data.Config.FlightConfig
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FlightConfig</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TableNbr" class="control-label"></label>
+                <input asp-for="TableNbr" class="form-control" />
+                <span asp-validation-for="TableNbr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carrier" class="control-label"></label>
+                <input asp-for="Carrier" class="form-control" />
+                <span asp-validation-for="Carrier" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="DomeIntl" /> @Html.DisplayNameFor(model => model.DomeIntl)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfCompartments" class="control-label"></label>
+                <input asp-for="NumberOfCompartments" class="form-control" />
+                <span asp-validation-for="NumberOfCompartments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EQPCode" class="control-label"></label>
+                <input asp-for="EQPCode" class="form-control" />
+                <span asp-validation-for="EQPCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumberOfClasses" class="control-label"></label>
+                <input asp-for="NumberOfClasses" class="form-control" />
+                <span asp-validation-for="NumberOfClasses" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cap1" class="control-label"></label>
+                <input asp-for="Cap1" class="form-control" />
+                <span asp-validation-for="Cap1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cap2" class="control-label"></label>
+                <input asp-for="Cap2" class="form-control" />
+                <span asp-validation-for="Cap2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cap3" class="control-label"></label>
+                <input asp-for="Cap3" class="form-control" />
+                <span asp-validation-for="Cap3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Classes" class="control-label"></label>
+                <input asp-for="Classes" class="form-control" />
+                <span asp-validation-for="Classes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Remark" class="control-label"></label>
+                <input asp-for="Remark" class="form-control" />
+                <span asp-validation-for="Remark" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromDate" class="control-label"></label>
+                <input asp-for="FromDate" class="form-control" />
+                <span asp-validation-for="FromDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Todate" class="control-label"></label>
+                <input asp-for="Todate" class="form-control" />
+                <span asp-validation-for="Todate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateBy" class="control-label"></label>
+                <input asp-for="CreateBy" class="form-control" />
+                <span asp-validation-for="CreateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateDate" class="control-label"></label>
+                <input asp-for="CreateDate" class="form-control" />
+                <span asp-validation-for="CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateBy" class="control-label"></label>
+                <input asp-for="UpdateBy" class="form-control" />
+                <span asp-validation-for="UpdateBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UpdateDate" class="control-label"></label>
+                <input asp-for="UpdateDate" class="form-control" />
+                <span asp-validation-for="UpdateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace ScheduleChange.Models
+namespace ScheduleChange.Data
 {
     public class SCCRequestModel
     {
