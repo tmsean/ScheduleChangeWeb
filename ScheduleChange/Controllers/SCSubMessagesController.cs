@@ -24,7 +24,15 @@ namespace ScheduleChange.Controllers
         {
             return View(await _context.SCSubMessages.ToListAsync());
         }
-
+        [Route("sub-messages/{id:int:min(1)}")]
+        public async Task<IActionResult> GetSubMessagesBySitatex(int id)
+        {
+            var data = await _context.SCSubMessages.ToListAsync();
+            data = data.Where(x => x.SC_SITATEXID == id).ToList();
+            var SITATEX_FILE = await _context.SC_SITATEXes.FindAsync(id);
+            ViewBag.FILE_NAME = SITATEX_FILE.FileName;
+            return View(data);
+        }
         // GET: SCSubMessages/Details/5
         public async Task<IActionResult> Details(int? id)
         {

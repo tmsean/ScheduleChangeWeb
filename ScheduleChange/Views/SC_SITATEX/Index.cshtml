@@ -57,7 +57,7 @@
                     @Html.DisplayFor(modelItem => item.Text.Split()[0])
                 </td>
                 <td>
-                    <a href="#">Click here</a>
+                    <a asp-controller="SCSubMessages" asp-action="GetSubMessagesBySitatex" asp-route-id="@item.ID">Click here</a>
                 </td>
                 <td>
                     @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |*@

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ScheduleChange.Data
 {
@@ -15,6 +16,7 @@ namespace ScheduleChange.Data
         public DateTime BoardTime { get; set; }
         public DateTime OffTime { get; set; }
         public int Frequency { get; set; }
+        [Range(-2,2)]
         public int DayChangeIndicator { get; set; }
         public string EquipType { get; set; }
         public string EquipConfig { get; set; }
