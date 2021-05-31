@@ -393,6 +393,85 @@ namespace ScheduleChange.Migrations
 
                     b.ToTable("ThreeCompartmentsFlights");
                 });
+
+            modelBuilder.Entity("ScheduleChange.Models.SCSubMessage", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SCC_SITATEXID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SC_SITATEXID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("SC_SITATEXID");
+
+                    b.ToTable("SCSubMessages");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.SC_SITATEX", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Destinations")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Header")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageEnd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MessageId")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Origin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Priority")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SMI")
+                        .HasMaxLength(3)
+                        .HasColumnType("nvarchar(3)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("SC_SITATEXes");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.SCSubMessage", b =>
+                {
+                    b.HasOne("ScheduleChange.Models.SC_SITATEX", null)
+                        .WithMany("SubMessages")
+                        .HasForeignKey("SC_SITATEXID");
+                });
+
+            modelBuilder.Entity("ScheduleChange.Models.SC_SITATEX", b =>
+                {
+                    b.Navigation("SubMessages");
+                });
 #pragma warning restore 612, 618
         }
     }
