@@ -67,6 +67,9 @@
     </dl>
 </div>
 <div>
+    @*<button type="button" class="btn btn-primary" asp-controller="SCSubMessages" asp-action="GetSubMessagesBySitatex" asp-route-id="@Model.ID">Sub Messages</button>
+        <button type="button" class="btn btn-primary" asp-action="Index">Back to List</button>*@
+    <a asp-controller="SCSubMessages" asp-action="GetSubMessagesBySitatex" asp-route-id="@Model.ID">Sub messages</a> <br />
     <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

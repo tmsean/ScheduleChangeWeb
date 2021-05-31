@@ -24,7 +24,7 @@ namespace ScheduleChange.Controllers
         {
             return View(await _context.SCSubMessages.ToListAsync());
         }
-        [Route("sub-messages/{id:int:min(1)}")]
+        [Route("sitatex-sub-messages/{id:int:min(1)}")]
         public async Task<IActionResult> GetSubMessagesBySitatex(int id)
         {
             var data = await _context.SCSubMessages.ToListAsync();
