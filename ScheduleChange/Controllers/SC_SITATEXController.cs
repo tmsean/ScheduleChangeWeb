@@ -22,7 +22,12 @@ namespace ScheduleChange.Controllers
         // GET: SC_SITATEX
         public async Task<IActionResult> Index()
         {
-            return View(await _context.SC_SITATEXes.ToListAsync());
+            var data = await _context.SC_SITATEXes.ToListAsync();
+            //data = data.OrderByDescending(x => x.ID).ToList();
+            data = (from s in data
+                   orderby s.ID descending
+                   select s).ToList();
+            return View(data);
         }
 
         // GET: SC_SITATEX/Details/5

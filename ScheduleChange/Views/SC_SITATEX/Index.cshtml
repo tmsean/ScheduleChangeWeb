@@ -1,28 +1,20 @@
 ﻿@model IEnumerable<ScheduleChange.Models.SC_SITATEX>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "SC SITATEX";
 }
 
-<h1>Index</h1>
+<h1>Danh mục các file SITATEX của chương trình SC</h1>
+<br/>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table  class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.FileName)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Header)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Priority)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destinations)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Origin)
@@ -34,50 +26,46 @@
                 @Html.DisplayNameFor(model => model.SMI)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Text)
+                Time mode
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MessageEnd)
+                Sub messages
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.FileName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Header)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Priority)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destinations)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Origin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MessageId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SMI)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MessageEnd)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+        <a>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Header)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Priority)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MessageId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SMI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text.Split()[0])
+                </td>
+                <td>
+                    <a href="#">Click here</a>
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |*@
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> @*|*@
+                    @*<a asp-action="Delete" asp-route-id="@item.ID">Delete</a>*@
+                </td>
+            </tr>
+        </a>
 }
     </tbody>
 </table>
