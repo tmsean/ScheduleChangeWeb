@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using ScheduleChange.Data;
 using ScheduleChange.Models;
 using ScheduleChange.Models.Config;
@@ -10,10 +11,10 @@ namespace ScheduleChange.Repository
         public SCContext(DbContextOptions<SCContext> options)
             : base(options)
         {
-
+            
         }
-        public DbSet<SC_SITATEX> SC_SITATEXes { get; set; }
-        public DbSet<SCSubMessage> SCSubMessages { get; set; }
+        public DbSet<SITATEX> SITATEXes { get; set; }
+        public DbSet<SubMessage> SubMessages { get; set; }
         public DbSet<SCRequest> SCCRequests { get; set; }
         //Tables config
         public DbSet<Address> Addresses { get; set; }
@@ -24,6 +25,5 @@ namespace ScheduleChange.Repository
         public DbSet<PCC> PCCs { get; set; }
         public DbSet<SSCIStation> SSCIStations { get; set; }
         public DbSet<ThreeCompartmentsFlight> ThreeCompartmentsFlights { get; set; }
-
     }
 }

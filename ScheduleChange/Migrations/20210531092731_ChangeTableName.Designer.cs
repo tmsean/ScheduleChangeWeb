@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScheduleChange.Repository;
 
 namespace ScheduleChange.Migrations
 {
     [DbContext(typeof(SCContext))]
-    partial class SCCContextModelSnapshot : ModelSnapshot
+    [Migration("20210531092731_ChangeTableName")]
+    partial class ChangeTableName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -449,7 +451,10 @@ namespace ScheduleChange.Migrations
                     b.Property<string>("MessageID")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SITATEXID")
+                    b.Property<int?>("SITATEXID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SITATEX_ID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -463,9 +468,7 @@ namespace ScheduleChange.Migrations
                 {
                     b.HasOne("ScheduleChange.Models.SITATEX", null)
                         .WithMany("SubMessages")
-                        .HasForeignKey("SITATEXID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SITATEXID");
                 });
 
             modelBuilder.Entity("ScheduleChange.Models.SITATEX", b =>
