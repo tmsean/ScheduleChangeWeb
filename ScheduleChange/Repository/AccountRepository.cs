@@ -9,16 +9,18 @@ namespace ScheduleChange.Repository
 {
     public class AccountRepository : IAccountRepository
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        public AccountRepository(UserManager<IdentityUser> userManager)
+        private readonly UserManager<ApplicationUser> _userManager;
+        public AccountRepository(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }
 
         public async Task<IdentityResult> CreateUserAsync(SignUpUser userModel)
         {
-            var user = new IdentityUser()
+            var user = new ApplicationUser()
             {
+                FirstName = userModel.FirstName,
+                LastName = userModel.LastName,
                 Email = userModel.Email,
                 UserName = userModel.Email
 

@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ScheduleChange.Repository
 {
-    public class SCContext : IdentityDbContext
+    public class SCContext : IdentityDbContext<ApplicationUser>
     {
         public SCContext(DbContextOptions<SCContext> options)
             : base(options)

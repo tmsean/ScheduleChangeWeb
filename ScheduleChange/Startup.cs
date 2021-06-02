@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScheduleChange.Repository;
 using Microsoft.AspNetCore.Identity;
+using ScheduleChange.Models;
 
 namespace ScheduleChange
 {
@@ -23,7 +24,7 @@ namespace ScheduleChange
         {
             services.AddDbContext<SCContext>(
                     options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddIdentity<IdentityUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SCContext>();
             services.AddControllersWithViews();
 #if DEBUG

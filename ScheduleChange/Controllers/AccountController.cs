@@ -42,8 +42,9 @@ namespace ScheduleChange.Controllers
                 }
 
                 ModelState.Clear();
+                return View();
             }
-            return View();
+            return View(userModel);
         }
     }
 }
