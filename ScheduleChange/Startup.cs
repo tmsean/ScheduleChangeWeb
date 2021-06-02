@@ -24,8 +24,10 @@ namespace ScheduleChange
         {
             services.AddDbContext<SCContext>(
                     options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SCContext>();
+
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequiredLength = 5;
