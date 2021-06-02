@@ -1,0 +1,137 @@
+﻿@model IEnumerable<ScheduleChange.Models.SCRequest>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SCType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Airline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoardPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OffPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BoardTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OffTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Frequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DayChangeIndicator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EquipConfig)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SCReason)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Overbooking)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProtectionPlan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VIPNote)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OtherNote)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MessageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SCType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoardPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OffPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BoardTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OffTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Frequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DayChangeIndicator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EquipConfig)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SCReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Overbooking)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProtectionPlan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VIPNote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherNote)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

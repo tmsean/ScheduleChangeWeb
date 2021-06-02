@@ -1,0 +1,118 @@
+﻿@model ScheduleChange.Models.SCRequest
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SCRequest</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MessageId" class="control-label"></label>
+                <input asp-for="MessageId" class="form-control" />
+                <span asp-validation-for="MessageId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SCType" class="control-label"></label>
+                <input asp-for="SCType" class="form-control" />
+                <span asp-validation-for="SCType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Airline" class="control-label"></label>
+                <input asp-for="Airline" class="form-control" />
+                <span asp-validation-for="Airline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightNumber" class="control-label"></label>
+                <input asp-for="FlightNumber" class="form-control" />
+                <span asp-validation-for="FlightNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FlightDate" class="control-label"></label>
+                <input asp-for="FlightDate" class="form-control" />
+                <span asp-validation-for="FlightDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BoardPoint" class="control-label"></label>
+                <input asp-for="BoardPoint" class="form-control" />
+                <span asp-validation-for="BoardPoint" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OffPoint" class="control-label"></label>
+                <input asp-for="OffPoint" class="form-control" />
+                <span asp-validation-for="OffPoint" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BoardTime" class="control-label"></label>
+                <input asp-for="BoardTime" class="form-control" />
+                <span asp-validation-for="BoardTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OffTime" class="control-label"></label>
+                <input asp-for="OffTime" class="form-control" />
+                <span asp-validation-for="OffTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Frequency" class="control-label"></label>
+                <input asp-for="Frequency" class="form-control" />
+                <span asp-validation-for="Frequency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DayChangeIndicator" class="control-label"></label>
+                <input asp-for="DayChangeIndicator" class="form-control" />
+                <span asp-validation-for="DayChangeIndicator" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EquipType" class="control-label"></label>
+                <input asp-for="EquipType" class="form-control" />
+                <span asp-validation-for="EquipType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EquipConfig" class="control-label"></label>
+                <input asp-for="EquipConfig" class="form-control" />
+                <span asp-validation-for="EquipConfig" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SCReason" class="control-label"></label>
+                <input asp-for="SCReason" class="form-control" />
+                <span asp-validation-for="SCReason" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Overbooking" class="control-label"></label>
+                <input asp-for="Overbooking" class="form-control" />
+                <span asp-validation-for="Overbooking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProtectionPlan" class="control-label"></label>
+                <input asp-for="ProtectionPlan" class="form-control" />
+                <span asp-validation-for="ProtectionPlan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VIPNote" class="control-label"></label>
+                <input asp-for="VIPNote" class="form-control" />
+                <span asp-validation-for="VIPNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OtherNote" class="control-label"></label>
+                <input asp-for="OtherNote" class="form-control" />
+                <span asp-validation-for="OtherNote" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

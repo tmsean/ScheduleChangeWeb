@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ScheduleChange.Repository;
+using Microsoft.AspNetCore.Identity;
 
 namespace ScheduleChange
 {
@@ -22,6 +23,8 @@ namespace ScheduleChange
         {
             services.AddDbContext<SCContext>(
                     options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                    .AddEntityFrameworkStores<SCContext>();
             services.AddControllersWithViews();
 #if DEBUG
             services.AddRazorPages().AddRazorRuntimeCompilation();
@@ -51,6 +54,7 @@ namespace ScheduleChange
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>

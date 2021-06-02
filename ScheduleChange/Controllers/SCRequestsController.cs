@@ -5,27 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ScheduleChange.Models.Config;
+using ScheduleChange.Models;
 using ScheduleChange.Repository;
 
-namespace ScheduleChange.Controllers.Config
+namespace ScheduleChange.Controllers
 {
-    public class FlightConfigsController : Controller
+    public class SCRequestsController : Controller
     {
         private readonly SCContext _context;
 
-        public FlightConfigsController(SCContext context)
+        public SCRequestsController(SCContext context)
         {
             _context = context;
         }
 
-        // GET: FlightConfigs
+        // GET: SCRequests
         public async Task<IActionResult> Index()
         {
-            return View(await _context.FlightConfigs.ToListAsync());
+            return View(await _context.SCRequests.ToListAsync());
         }
 
-        // GET: FlightConfigs/Details/5
+        // GET: SCRequests/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfigs = await _context.FlightConfigs
+            var sCRequest = await _context.SCRequests
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flightConfigs == null)
+            if (sCRequest == null)
             {
                 return NotFound();
             }
 
-            return View(flightConfigs);
+            return View(sCRequest);
         }
 
-        // GET: FlightConfigs/Create
+        // GET: SCRequests/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: FlightConfigs/Create
+        // POST: SCRequests/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,ToDate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfigs flightConfigs)
+        public async Task<IActionResult> Create([Bind("Id,MessageId,SCType,Airline,FlightNumber,FlightDate,BoardPoint,OffPoint,BoardTime,OffTime,Frequency,DayChangeIndicator,EquipType,EquipConfig,SCReason,Overbooking,ProtectionPlan,VIPNote,OtherNote")] SCRequest sCRequest)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(flightConfigs);
+                _context.Add(sCRequest);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(flightConfigs);
+            return View(sCRequest);
         }
 
-        // GET: FlightConfigs/Edit/5
+        // GET: SCRequests/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfigs = await _context.FlightConfigs.FindAsync(id);
-            if (flightConfigs == null)
+            var sCRequest = await _context.SCRequests.FindAsync(id);
+            if (sCRequest == null)
             {
                 return NotFound();
             }
-            return View(flightConfigs);
+            return View(sCRequest);
         }
 
-        // POST: FlightConfigs/Edit/5
+        // POST: SCRequests/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,TableNbr,Carrier,DomeIntl,NumberOfCompartments,EQPCode,NumberOfClasses,Cap1,Cap2,Cap3,Classes,Remark,FromDate,ToDate,CreateBy,CreateDate,UpdateBy,UpdateDate")] FlightConfigs flightConfigs)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,MessageId,SCType,Airline,FlightNumber,FlightDate,BoardPoint,OffPoint,BoardTime,OffTime,Frequency,DayChangeIndicator,EquipType,EquipConfig,SCReason,Overbooking,ProtectionPlan,VIPNote,OtherNote")] SCRequest sCRequest)
         {
-            if (id != flightConfigs.Id)
+            if (id != sCRequest.Id)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace ScheduleChange.Controllers.Config
             {
                 try
                 {
-                    _context.Update(flightConfigs);
+                    _context.Update(sCRequest);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FlightConfigsExists(flightConfigs.Id))
+                    if (!SCRequestExists(sCRequest.Id))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace ScheduleChange.Controllers.Config
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(flightConfigs);
+            return View(sCRequest);
         }
 
-        // GET: FlightConfigs/Delete/5
+        // GET: SCRequests/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,30 +124,30 @@ namespace ScheduleChange.Controllers.Config
                 return NotFound();
             }
 
-            var flightConfigs = await _context.FlightConfigs
+            var sCRequest = await _context.SCRequests
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (flightConfigs == null)
+            if (sCRequest == null)
             {
                 return NotFound();
             }
 
-            return View(flightConfigs);
+            return View(sCRequest);
         }
 
-        // POST: FlightConfigs/Delete/5
+        // POST: SCRequests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var flightConfigs = await _context.FlightConfigs.FindAsync(id);
-            _context.FlightConfigs.Remove(flightConfigs);
+            var sCRequest = await _context.SCRequests.FindAsync(id);
+            _context.SCRequests.Remove(sCRequest);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool FlightConfigsExists(int id)
+        private bool SCRequestExists(int id)
         {
-            return _context.FlightConfigs.Any(e => e.Id == id);
+            return _context.SCRequests.Any(e => e.Id == id);
         }
     }
 }

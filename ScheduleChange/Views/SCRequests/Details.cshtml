@@ -1,0 +1,126 @@
+﻿@model ScheduleChange.Models.SCRequest
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SCRequest</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MessageId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MessageId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SCType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SCType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Airline)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Airline)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlightNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlightNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FlightDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FlightDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BoardPoint)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BoardPoint)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OffPoint)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OffPoint)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BoardTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BoardTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OffTime)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OffTime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Frequency)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Frequency)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DayChangeIndicator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DayChangeIndicator)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EquipType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EquipConfig)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EquipConfig)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SCReason)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SCReason)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Overbooking)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Overbooking)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProtectionPlan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProtectionPlan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VIPNote)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VIPNote)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OtherNote)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OtherNote)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

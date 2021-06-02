@@ -3,10 +3,11 @@ using Microsoft.Extensions.Configuration;
 using ScheduleChange.Data;
 using ScheduleChange.Models;
 using ScheduleChange.Models.Config;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ScheduleChange.Repository
 {
-    public class SCContext : DbContext
+    public class SCContext : IdentityDbContext
     {
         public SCContext(DbContextOptions<SCContext> options)
             : base(options)
@@ -15,11 +16,11 @@ namespace ScheduleChange.Repository
         }
         public DbSet<SITATEX> SITATEXes { get; set; }
         public DbSet<SubMessage> SubMessages { get; set; }
-        public DbSet<SCRequest> SCCRequests { get; set; }
+        public DbSet<SCRequest> SCRequests { get; set; }
         //Tables config
         public DbSet<Address> Addresses { get; set; }
         public DbSet<MarketingCodeShareFlight> MarketingCodeShareFlights { get; set; }
-        public DbSet<FlightConfigs> Configs { get; set; }
+        public DbSet<FlightConfigs> FlightConfigs { get; set; }
         public DbSet<DomesticCity> DomesticCities { get; set; }
         public DbSet<MealsCode> Meals { get; set; }
         public DbSet<PCC> PCCs { get; set; }
