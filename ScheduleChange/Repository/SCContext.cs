@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using ScheduleChange.Data;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ScheduleChange.Models;
 using ScheduleChange.Models.Config;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace ScheduleChange.Repository
 {
@@ -12,7 +10,7 @@ namespace ScheduleChange.Repository
         public SCContext(DbContextOptions<SCContext> options)
             : base(options)
         {
-            
+
         }
         public DbSet<SITATEX> SITATEXes { get; set; }
         public DbSet<SubMessage> SubMessages { get; set; }

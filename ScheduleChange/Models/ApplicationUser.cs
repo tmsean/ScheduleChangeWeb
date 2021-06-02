@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ScheduleChange.Models
 {
@@ -13,3 +10,4 @@ namespace ScheduleChange.Models
         public DateTime? DateOfBirth { get; set; }
     }
 }
+

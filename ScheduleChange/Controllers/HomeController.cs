@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ScheduleChange.Data;
+using ScheduleChange.Models;
 using System.Diagnostics;
 
 namespace ScheduleChange.Controllers

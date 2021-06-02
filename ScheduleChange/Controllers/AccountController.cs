@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ScheduleChange.Models;
 using ScheduleChange.Repository;
+using System.Threading.Tasks;
 
 namespace ScheduleChange.Controllers
 {
@@ -45,6 +42,36 @@ namespace ScheduleChange.Controllers
                 return View();
             }
             return View(userModel);
+        }
+
+        [Route("login")]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [Route("login")]
+        [HttpPost]
+        public async Task<IActionResult> Login(SignInModel signInModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _accountRepository.PasswordSignInAsync(signInModel);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "Invalid credentials");
+            }
+
+            return View(signInModel);
+        }
+        [Route("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            await _accountRepository.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
