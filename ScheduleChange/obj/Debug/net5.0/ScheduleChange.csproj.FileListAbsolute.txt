@@ -493,6 +493,11 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Vi
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\DomesticCities\Details.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\DomesticCities\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\DomesticCities\Index.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Create.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Delete.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Details.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Edit.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Index.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\MarketingCodeShareFlights\Create.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\MarketingCodeShareFlights\Delete.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\MarketingCodeShareFlights\Details.cshtml.g.cs
@@ -529,14 +534,9 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Vi
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\GetSubMessagesBySitatex.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\Index.cshtml.g.cs
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Account\Signup.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Create.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Delete.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Details.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Index.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Create.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Delete.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Details.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Edit.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\FlightConfigs\Index.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Account\Signup.cshtml.g.cs

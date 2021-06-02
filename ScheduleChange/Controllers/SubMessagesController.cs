@@ -28,8 +28,6 @@ namespace ScheduleChange.Controllers
         public async Task<IActionResult> GetSubMessagesBySitatex(int id)
         {
             var data = await _context.SubMessages.Where(x => x.SITATEXID == id).ToListAsync();
-            var SITATEX_FILE = await _context.SITATEXes.FindAsync(id);
-            ViewBag.FILE_NAME = SITATEX_FILE.FileName;
             return View(data);
         }
         // GET: SubMessages/Details/5
