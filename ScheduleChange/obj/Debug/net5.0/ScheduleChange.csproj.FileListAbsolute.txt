@@ -534,9 +534,12 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Vi
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\GetSubMessagesBySitatex.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SubMessages\Index.cshtml.g.cs
+<<<<<<< HEAD
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Account\Signup.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Create.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Delete.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Details.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Edit.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\SCRequests\Index.cshtml.g.cs
+=======
+>>>>>>> a04174212c8404ff802cfa39fefd486aa849673d
