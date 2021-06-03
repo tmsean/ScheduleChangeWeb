@@ -492,4 +492,3 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Schedule
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.csprojAssemblyReference.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Shared\_LoginInfo.cshtml.g.cs
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Account\ChangePassword.cshtml.g.cs
