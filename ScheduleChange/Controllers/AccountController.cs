@@ -52,14 +52,17 @@ namespace ScheduleChange.Controllers
 
         [Route("login")]
         [HttpPost]
-        public async Task<IActionResult> Login(SignInModel signInModel)
+        public async Task<IActionResult> Login(SignInModel signInModel, string returnUrl)
         {
             if (ModelState.IsValid)
             {
                 var result = await _accountRepository.PasswordSignInAsync(signInModel);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return LocalRedirect(returnUrl);
+                    }
                 }
 
                 ModelState.AddModelError("", "Invalid credentials");

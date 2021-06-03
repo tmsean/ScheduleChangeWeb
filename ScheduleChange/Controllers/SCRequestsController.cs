@@ -4,9 +4,11 @@ using ScheduleChange.Models;
 using ScheduleChange.Repository;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ScheduleChange.Controllers
 {
+    [Authorize]
     public class SCRequestsController : Controller
     {
         private readonly SCContext _context;
@@ -49,6 +51,7 @@ namespace ScheduleChange.Controllers
         // POST: SCRequests/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,MessageId,SCType,Airline,FlightNumber,FlightDate,BoardPoint,OffPoint,BoardTime,OffTime,Frequency,DayChangeIndicator,EquipType,EquipConfig,SCReason,Overbooking,ProtectionPlan,VIPNote,OtherNote")] SCRequest sCRequest)
