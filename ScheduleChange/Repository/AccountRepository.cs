@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using ScheduleChange.Models;
+using ScheduleChange.Service;
 using System.Threading.Tasks;
 
 namespace ScheduleChange.Repository
@@ -8,13 +9,16 @@ namespace ScheduleChange.Repository
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        private readonly IUserService _userService;
+        public AccountRepository(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
+            IUserService userService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _userService = userService;
         }
 
-        public async Task<IdentityResult> CreateUserAsync(SignUpUser userModel)
+        public async Task<IdentityResult> CreateUserAsync(SignUpUserModel userModel)
         {
             var user = new ApplicationUser()
             {
@@ -26,6 +30,12 @@ namespace ScheduleChange.Repository
             };
             var result = await _userManager.CreateAsync(user, userModel.Password);
             return result;
+        }
+        public async Task<IdentityResult> ChangePasswordAsync(ChangePasswordModel model)
+        {
+            var userId = _userService.GetUserId();
+            var user = await _userManager.FindByIdAsync(userId);
+            return await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
         }
         public async Task<SignInResult> PasswordSignInAsync(SignInModel signInModel)
         {

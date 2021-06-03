@@ -2,7 +2,7 @@
 
 namespace ScheduleChange.Models
 {
-    public class SignUpUser
+    public class SignUpUserModel
     {
         [Display(Name = "Tên")]
         [Required(ErrorMessage = "Bắt buộc phải điền tên của bạn")]
