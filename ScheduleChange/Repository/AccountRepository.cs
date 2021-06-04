@@ -46,6 +46,10 @@ namespace ScheduleChange.Repository
             }
             return result;
         }
+        public async Task<IdentityResult> ConfirmEmailAsync(string uid, string token)
+        {
+            return await _userManager.ConfirmEmailAsync(await _userManager.FindByIdAsync(uid), token);
+        }
         public async Task<SignInResult> PasswordSignInAsync(SignInModel signInModel)
         {
             return await _signInManager.PasswordSignInAsync(signInModel.Email, signInModel.Password, signInModel.RememberMe, false);
