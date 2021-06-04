@@ -10,8 +10,9 @@ namespace ScheduleChange.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IUserService _userService;
-
-        public HomeController(ILogger<HomeController> logger, IUserService userService)
+        private readonly IEmailService _emailService;
+        public HomeController(ILogger<HomeController> logger, IUserService userService,
+            IEmailService emailService)
         {
             _logger = logger;
             _userService = userService;
