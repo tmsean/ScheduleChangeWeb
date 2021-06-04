@@ -28,7 +28,7 @@ namespace ScheduleChange
                     options => options.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
-                    .AddEntityFrameworkStores<SCContext>();
+                    .AddEntityFrameworkStores<SCContext>().AddDefaultTokenProviders();
 
             services.Configure<IdentityOptions>(options =>
             {

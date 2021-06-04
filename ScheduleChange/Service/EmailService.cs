@@ -24,6 +24,14 @@ namespace ScheduleChange.Service
 
             await SendEmail(userEmailOptions);
         }
+        public async Task SendEmailForEmailConfirmation(UserEmailOptions userEmailOptions)
+        {
+            userEmailOptions.Subject = UpdatePlaceHolders("Hello {{UserName}}, Confirm your email id.", userEmailOptions.PlaceHolders);
+
+            userEmailOptions.Body = UpdatePlaceHolders(GetEmailBody("EmailConfirm"), userEmailOptions.PlaceHolders);
+
+            await SendEmail(userEmailOptions);
+        }
 
         public EmailService(IOptions<SMTPConfigModel> smtpConfig)
         {
