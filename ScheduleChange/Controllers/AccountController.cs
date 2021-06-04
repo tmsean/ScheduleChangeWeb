@@ -64,8 +64,14 @@ namespace ScheduleChange.Controllers
                         return LocalRedirect(returnUrl);
                     }
                 }
-
-                ModelState.AddModelError("", "Invalid credentials");
+                if (result.IsNotAllowed)
+                {
+                    ModelState.AddModelError("", "Not allowed to login");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid credentials");
+                }
             }
 
             return View(signInModel);
