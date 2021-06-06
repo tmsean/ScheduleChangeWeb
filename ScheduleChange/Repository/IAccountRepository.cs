@@ -12,5 +12,7 @@ namespace ScheduleChange.Repository
         Task<SignInResult> PasswordSignInAsync(SignInModel signInModel);
         Task SignOutAsync();
         Task<ApplicationUser> GetUserByEmailAsync(string email);
+        Task<IdentityResult> ResetPasswordAsync(ResetPasswordModel model);
+        Task GenerateForgotPasswordTokenAsync(ApplicationUser user);
     }
 }
