@@ -40,6 +40,7 @@ namespace ScheduleChange
                 options.Password.RequireUppercase = false;
 
                 options.SignIn.RequireConfirmedEmail = true;
+                options.User.RequireUniqueEmail = true;
             });
             services.ConfigureApplicationCookie(config =>
             {
@@ -59,6 +60,7 @@ namespace ScheduleChange
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
 
             services.Configure<SMTPConfigModel>(_configuration.GetSection("SMTPConfig"));
         }

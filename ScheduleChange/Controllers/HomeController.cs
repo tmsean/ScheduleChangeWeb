@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Logging;
 using ScheduleChange.Models;
 using ScheduleChange.Service;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace ScheduleChange.Controllers
 {
@@ -16,10 +18,20 @@ namespace ScheduleChange.Controllers
         {
             _logger = logger;
             _userService = userService;
+            _emailService = emailService;
         }
-
-        public IActionResult Index()
+        [Route("~/")]
+        public async Task<IActionResult> Index()
         {
+            UserEmailOptions options = new UserEmailOptions
+            {
+                ToEmails = new List<string>() { "fe2893c82f-7dfd76@inbox.mailtrap.io" },
+                PlaceHolders = new List<KeyValuePair<string, string>>()
+                {
+                    new KeyValuePair<string, string>("{{UserName}}", "John")
+                }
+            };
+            await _emailService.SendTestEmail(options);
             return View();
         }
 

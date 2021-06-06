@@ -22,7 +22,7 @@ namespace ScheduleChange.Controllers
 
         [Route("signup")]
         [HttpPost]
-        public async Task<IActionResult> SignupAsync(SignUpUser userModel)
+        public async Task<IActionResult> Signup(SignUpUserModel userModel)
         {
             if (ModelState.IsValid)
             {
@@ -39,9 +39,10 @@ namespace ScheduleChange.Controllers
                 }
 
                 ModelState.Clear();
-                return View();
+                return RedirectToAction("ConfirmEmail", new { email = userModel.Email });
             }
-            return View(userModel);
+
+            return RedirectToAction("ConfirmEmail", new { email = userModel.Email });
         }
 
         [Route("login")]
@@ -77,21 +78,44 @@ namespace ScheduleChange.Controllers
             return View(signInModel);
         }
         [HttpGet("confirm-email")]
-        public async Task<IActionResult> ConfirmEmail(string uid, string token)
+        public async Task<IActionResult> ConfirmEmail(string uid, string token, string email)
         {
-
+            EmailConfirmModel model = new EmailConfirmModel
+            {
+                Email = email
+            };
             if (!string.IsNullOrEmpty(uid) && !string.IsNullOrEmpty(token))
             {
                 token = token.Replace(' ', '+');
                 var result = await _accountRepository.ConfirmEmailAsync(uid, token);
                 if (result.Succeeded)
                 {
-                    ViewBag.IsSuccess = true;
+                    model.EmailVerified = true;
                 }
             }
+            return View(model);
+        }
+        [HttpPost("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(EmailConfirmModel model)
+        {
+            var user = await _accountRepository.GetUserByEmailAsync(model.Email);
+            if (user != null)
+            {
+                if (user.EmailConfirmed)
+                {
+                    model.EmailVerified = true;
+                    return View(model);
+                }
 
-            return View();
-
+                await _accountRepository.GenerateEmailConfirmationTokenAsync(user);
+                model.EmailSent = true;
+                ModelState.Clear();
+            }
+            else
+            {
+                ModelState.AddModelError("", "Something went wrong.");
+            }
+            return View(model);
         }
         [Route("logout")]
         public async Task<IActionResult> Logout()

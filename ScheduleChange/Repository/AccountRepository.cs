@@ -24,8 +24,11 @@ namespace ScheduleChange.Repository
             _emailService = emailService;
             _configuration = configuration;
         }
-
-        public async Task<IdentityResult> CreateUserAsync(SignUpUser userModel)
+        public async Task<ApplicationUser> GetUserByEmailAsync(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
+        public async Task<IdentityResult> CreateUserAsync(SignUpUserModel userModel)
         {
             var user = new ApplicationUser()
             {
@@ -38,13 +41,17 @@ namespace ScheduleChange.Repository
             var result = await _userManager.CreateAsync(user, userModel.Password);
             if (result.Succeeded)
             {
-                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                if (!string.IsNullOrEmpty(token))
-                {
-                    await SendEmailConfirmationEmail(user, token);
-                }
+                await GenerateEmailConfirmationTokenAsync(user);
             }
             return result;
+        }
+        public async Task GenerateEmailConfirmationTokenAsync(ApplicationUser user)
+        {
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            if (!string.IsNullOrEmpty(token))
+            {
+                await SendEmailConfirmationEmail(user, token);
+            }
         }
         public async Task<IdentityResult> ConfirmEmailAsync(string uid, string token)
         {
