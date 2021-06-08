@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ScheduleChange.Models;
 using ScheduleChange.Service;
@@ -34,7 +35,8 @@ namespace ScheduleChange.Controllers
             //await _emailService.SendTestEmail(options);
             return View();
         }
-
+        // Uncomment the below line to enable roles on this action method.
+        //[Authorize(Roles = "Admin,User")]
         public IActionResult Privacy()
         {
             return View();

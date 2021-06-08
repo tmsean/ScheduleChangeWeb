@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace ScheduleChange.Controllers
 {
-    [Authorize]
     public class SCRequestsController : Controller
     {
         private readonly SCContext _context;
