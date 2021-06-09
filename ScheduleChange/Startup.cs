@@ -9,6 +9,7 @@ using ScheduleChange.Helpers;
 using ScheduleChange.Models;
 using ScheduleChange.Repository;
 using ScheduleChange.Service;
+using System;
 
 namespace ScheduleChange
 {
@@ -41,6 +42,13 @@ namespace ScheduleChange
 
                 options.SignIn.RequireConfirmedEmail = true;
                 options.User.RequireUniqueEmail = true;
+
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(20);
+                options.Lockout.MaxFailedAccessAttempts = 3;
+            });
+            services.Configure<DataProtectionTokenProviderOptions>(options =>
+            {
+                options.TokenLifespan = TimeSpan.FromMinutes(5);
             });
             services.ConfigureApplicationCookie(config =>
             {

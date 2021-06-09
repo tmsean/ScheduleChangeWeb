@@ -400,7 +400,6 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\runtimes
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.csprojAssemblyReference.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.GeneratedMSBuildEditorConfig.editorconfig
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.AssemblyInfoInputs.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.AssemblyInfo.cs
@@ -410,7 +409,6 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Schedule
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.RazorAssemblyInfo.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.RazorAssemblyInfo.cs
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\staticwebassets\ScheduleChange.StaticWebAssets.Manifest.cache
-E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\staticwebassets\ScheduleChange.StaticWebAssets.xml
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\scopedcss\bundle\ScheduleChange.styles.css
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.TagHelpers.input.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.TagHelpers.output.cache
@@ -497,3 +495,5 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ref\Sche
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.pdb
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.genruntimeconfig.cache
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\bundleconfig.json
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.csproj.AssemblyReference.cache
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Razor\Views\Book\AddBook.cshtml.g.cs

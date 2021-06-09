@@ -1,0 +1,19 @@
+﻿@model ScheduleChange.Controllers.Book
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create a new fantasy book entry</title>
+</head>
+<body>
+    <form method="post" action="/book/fantasy"> 
+        <label name="genre">Book genre:</label>
+        <input type="text" name="genre" />
+        <label name="Name">Name:</label>
+        <input type="text" name="Name" />
+        <label name="PageCount">Page count:</label>
+        <input type="text" name="PageCount" />
+        <input type="submit" value="Submit" />
+    </form>
+</body>
+</html>
