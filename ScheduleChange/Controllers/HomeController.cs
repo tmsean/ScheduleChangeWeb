@@ -22,7 +22,7 @@ namespace ScheduleChange.Controllers
             _emailService = emailService;
         }
         [Route("~/")]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             //UserEmailOptions options = new UserEmailOptions
             //{

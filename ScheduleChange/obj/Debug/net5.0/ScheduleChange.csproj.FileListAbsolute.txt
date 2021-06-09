@@ -496,3 +496,4 @@ E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\Schedule
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ref\ScheduleChange.dll
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.pdb
 E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\obj\Debug\net5.0\ScheduleChange.genruntimeconfig.cache
+E:\SCC\ScheduleChange\ScheduleChangeWeb\ScheduleChange\bin\Debug\net5.0\bundleconfig.json

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4dtrLc5N9QYIpC6lINPVe3LI3eNwchX7ndZKB7YlGMrYJ3l7yfcaKahoL3wlVC1j1wfteh57TlxHfdwFViKBOQ==",
+  "dgSpecHash": "S+iwKhVxZhrTA0zyDg0juKdt5sCv7pU7mD4LiVnMQvoE1S57uXL9lPhPue//9OYkE1r2sVXDSZTqS9vcX4gZ3g==",
   "success": true,
   "projectFilePath": "E:\\SCC\\ScheduleChange\\ScheduleChangeWeb\\ScheduleChange\\ScheduleChange.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ACER\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.6\\microsoft.aspnetcore.cryptography.internal.5.0.6.nupkg.sha512",
     "C:\\Users\\ACER\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.6\\microsoft.aspnetcore.cryptography.keyderivation.5.0.6.nupkg.sha512",

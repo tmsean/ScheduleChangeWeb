@@ -33,6 +33,11 @@ namespace ScheduleChange.Repository
         {
             return await _userManager.FindByEmailAsync(email);
         }
+        public async Task<IdentityResult> AddNewRole(string email)
+        {
+            IdentityRole identityRole = new IdentityRole("Admin");
+            return await _roleManager.CreateAsync(identityRole);
+        }
         public async Task<IdentityResult> CreateUserAsync(SignUpUserModel userModel)
         {
             var user = new ApplicationUser()
